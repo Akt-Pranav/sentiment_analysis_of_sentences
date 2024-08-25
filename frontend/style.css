@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+  background-color: #000;
+  font-family: Arial, sans-serif;
+  padding: 20px; /* Added padding to ensure the container doesn't touch the edges */
+}
+
+.heading {
+  margin-bottom: 10px; /* Removed negative margin and adjusted spacing */
+  text-align: center;
+}
+
+.first {
+  font-size: 50px;
+  font-weight: bolder;
+  color: white;
+}
+
+.second {
+  font-size: 50px;
+  font-weight: bolder;
+  color: #000;
+  background: orange;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.container {
+  width: 80%;
+  max-width: 800px;
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-height: 60vh; /* Ensure minimum height so it doesn't shrink */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-output-container {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.input-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: calc(100% - 20px); /* Adjusted to prevent touching the parent div */
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #444;
+  color: orange;
+  font-size: 18px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: darkorange;
+}
+
+.output-container {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+}
+
+#paragraphDisplay,
+#result {
+  background-color: #fff;
+  border: 2px solid orange;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  animation: borderAnimation 2s infinite alternate;
+  color: #333;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+#result hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.analysis-result {
+  margin-bottom: 10px;
+}
+
+footer {
+  position: fixed; /* Footer is now fixed to the bottom of the page */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #222;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bolder;
+}
+footer .highlight {
+  color: #ffb700;
+}
+
+@keyframes borderAnimation {
+  0% {
+    border-color: orange;
+  }
+  100% {
+    border-color: darkorange;
+  }
+}
