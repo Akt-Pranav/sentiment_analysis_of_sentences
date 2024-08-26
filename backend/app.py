@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import subprocess
 import json
-import os
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -33,4 +32,6 @@ def analyze():
         return jsonify({'error': 'Invalid request format. JSON expected.'}), 400
 
 if __name__ == '__main__':
-    app.run(port=3000, debug=True)
+    # Do not use Flask's built-in server for production
+    # The following line is only for development
+    app.run(host='0.0.0.0', port=3000, debug=False)
