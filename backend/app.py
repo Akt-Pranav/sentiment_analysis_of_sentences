@@ -22,10 +22,16 @@ def analyze():
                 ['python', 'sentiment_analysis.py'],
                 input=text, text=True, capture_output=True, check=True
             )
-            result_data = json.loads(result.stdout)
-            return jsonify(result_data)
+
+            # Log and check if any output was received
+            if result.stdout:
+                result_data = json.loads(result.stdout)
+                return jsonify(result_data)
+            else:
+                return jsonify({'error': 'No output from sentiment analysis script'}), 500
+
         except subprocess.CalledProcessError as e:
-            return jsonify({'error': str(e)}), 500
+            return jsonify({'error': f'Process error: {str(e)}'}), 500
         except json.JSONDecodeError:
             return jsonify({'error': 'Error parsing JSON from script output'}), 500
     else:

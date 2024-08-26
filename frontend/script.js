@@ -4,7 +4,8 @@ async function analyzeText() {
     const paragraphDiv = document.getElementById('paragraphDisplay');
 
     try {
-        const response = await fetch('http://127.0.0.1:3000/analyze', {
+        // Update this URL to point to your deployed backend URL
+        const response = await fetch('https://sentisentences.onrender.com/analyze', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
